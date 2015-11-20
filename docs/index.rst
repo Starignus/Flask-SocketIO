@@ -12,6 +12,13 @@ client-side application can use the `SocketIO <http://socket.io>`_ Javascript
 library or any compatible client to establish a permanent connection to the
 server.
 
+Installation
+------------
+
+You can install this package in the usual way using ``pip``::
+
+    pip install flask-socketio
+
 Requirements
 ------------
 
@@ -44,7 +51,7 @@ Current Limitations
 ~~~~~~~~~~~~~~~~~~~
 
 - Flask-SocketIO can only run in a single worker process at this time. Work is
-currently in progress to eliminate this limitation.
+  currently in progress to eliminate this limitation.
 
 Differences With Flask-SocketIO Versions 0.x
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -528,6 +535,10 @@ supports WebSocket. The modified command is the following::
 
     gunicorn --worker-class geventwebsocket.gunicorn.workers.GeventWebSocketWorker module:app
 
+Gunicorn release 18.0 is the recommended release to use with Flask-SocketIO.
+The 19.x releases are known to have incompatibilities in certain deployment
+scenarios.
+
 Using nginx as a WebSocket Reverse Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -576,4 +587,5 @@ API Reference
 .. autofunction:: join_room
 .. autofunction:: leave_room
 .. autofunction:: close_room
+.. autofunction:: rooms
 .. autofunction:: disconnect
